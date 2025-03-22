@@ -1,0 +1,255 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(to right, #8360c3, #2ebf91);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            max-width: 600px;
+            padding: 40px;
+            background: white;
+            color: black;
+            border: 4px solid black;
+            
+            border-radius: 15px;
+            box-shadow: 7px 10px 25px rgb(255, 255, 255);
+            opacity: 0;
+            transform: translateY(-50px);
+            transition: transform 0.5s ease, opacity 0.5s ease, box-shadow 0.3s ease;
+        }
+        .container:hover {
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+        button {
+            width: 100%;
+            margin: 10px auto;
+            padding: 15px;
+            border: 5px solid black;
+            border-radius: 8px;
+            font-size: 18px;
+        }
+        input {
+            width: 100%;
+            height: 50px;
+            border: 2px solid #ccc;
+            transition: box-shadow 0.3s;
+            border: 3px solid black;
+            border-radius: 8px;
+            font-size: 18px;
+
+        }
+
+        input:focus {
+            outline: none;
+            box-shadow: 0 0 8px #2ebf91;
+        }
+        button {
+            background: #2ebf91;
+            color: white;
+            border: 3px solid black;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #28a67c;
+        }
+        #shortUrl {
+            display: none;
+            margin-top: 15px;
+            color: #2ebf91;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: 3px solid black;
+            background: #ff4b5c;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+        .back-btn:hover {
+            background: #d43f50;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>🚀 URL Shortener</h2>
+        <input type="text" id="longUrl" placeholder="Enter long URL" required>
+        <button onclick="shortenUrl()">Shorten</button>
+        <p id="shortUrl" onclick="copyToClipboard()"></p>
+        <br>
+        <a href="./hackathon1.html" class="back-btn">Back to Home</a> 
+    </div>
+    
+    <script>
+        gsap.to(".container", { opacity: 1, y: 0, duration: 1, ease: "power2.out" });
+
+        function shortenUrl() {
+            let longUrl = document.getElementById('longUrl').value;
+            if (!longUrl) return alert("Please enter a URL");
+            
+            let shortCode = Math.random().toString(36).substring(2, 8);
+            let shortUrl = window.location.origin + '/' + shortCode;
+            
+            let shortUrlElement = document.getElementById('shortUrl');
+            shortUrlElement.innerText = shortUrl;
+            shortUrlElement.style.display = 'block';
+            
+            gsap.fromTo("#shortUrl", { opacity: 0, y: -20, scale: 0.8 }, { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: "elastic.out(1, 0.5)" });
+        }
+
+        function copyToClipboard() {
+            navigator.clipboard.writeText(document.getElementById('shortUrl').innerText);
+            alert("Copied to clipboard!");
+            gsap.to("#shortUrl", { scale: 1.2, duration: 0.2, yoyo: true, repeat: 1 });
+        }
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share on Social Media</title>
+    <link href = "https://fonts.google.com/icons">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    <style>
+       
+        body { font-family: Arial, sans-serif; text-align: center; margin: 50px; background-image: url("projectimage.jpg");font-size: large; }
+        .share-btns { margin-top: 20px; }
+        
+        
+       h2{
+        color: rgb(0, 0, 0);
+        font-size: 50px;
+        text-decoration: underline rgb(174, 131, 13);
+       }
+
+       p{
+        color: #020202;
+        font-size: x-large;
+        text-decoration: underline 4px rgb(255, 98, 0);
+        text-transform: uppercase;
+       }
+        .btn { 
+            display: inline-flex rgb(255, 132, 0); 
+            align-items: center;
+            gap: 10px;
+            margin: 10px; 
+            padding: 10px 20px; 
+            text-decoration: none; 
+            color: white; 
+            border-radius: 5px; 
+            font-size: 16px;
+        }
+        .whatsapp { background-color: #25D366;
+           border: 2px solid black;
+           box-shadow: 5px 6px 7px;
+
+        }
+        .instagram { background-color: #E1306C;
+            border: 2px solid black;
+            box-shadow: 5px 6px 7px; }
+        .facebook { background-color: #1877F2;
+            border: 2px solid black;
+            box-shadow: 5px 6px 7px; }
+        .twitter { background-color: #1DA1F2;
+            border: 2px solid black;
+            box-shadow: 5px 6px 7px; }
+        .copy-btn {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #1d1d1d;
+            color: white;
+            box-shadow: 3px 5px 5px black;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .home{
+            background-color: red;
+            margin: 10px; 
+            padding: 10px 20px; 
+            text-decoration: none; 
+            color: white; 
+            border-radius: 5px; 
+            font-size: 16px;
+
+        }
+    </style>
+</head>
+<body>
+    <h2>Share This Link</h2>
+    <p>Click the buttons below to share the Link</p>
+    <div class="share-btns">
+        <a class="btn whatsapp" href="https://wa.me/?text=Check%20this%20out:%20https://example.com" target="_blank">
+            <icon class="fab fa-whatsapp"></icon> Share on WhatsApp
+        </a>
+        <a class="btn instagram" href="https://www.instagram.com/" target="_blank">
+            <icon class="fab fa-instagram"></icon> Share on Instagram
+        </a>
+        <a class="btn facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://example.com" target="_blank">
+            <icon class="fab fa-facebook-f"></icon> Share on Facebook
+        </a>
+        <a class="btn twitter" href="https://twitter.com/intent/tweet?url=https://example.com&text=Check%20this%20out!" target="_blank">
+            <icon class="fab fa-x-twitter"></icon> Share on Twitter
+        </a>
+    </div>
+    <button class="copy-btn" onclick="copyToClipboard()">Copy Link</button>
+    <a href="./home.html" class = "home">Home</a>
+    <script>
+        function copyToClipboard() {
+            const text = "https://example.com";
+            navigator.clipboard.writeText(text).then(() => {
+                alert("Link copied to clipboard!");
+            });
+        }
+
+        gsap.from(".btn", { 
+            opacity: 0, 
+            y: 50, 
+            duration: 1, 
+            stagger: 0.2, 
+            ease: "power2.out" 
+        });
+
+        document.querySelectorAll(".btn").forEach(btn => {
+            btn.addEventListener("mouseenter", () => {
+                gsap.to(btn, { scale: 1.1, duration: 0.2, ease: "power2.out" });
+            });
+            btn.addEventListener("mouseleave", () => {
+                gsap.to(btn, { scale: 1, duration: 0.2, ease: "power2.inOut" });
+            });
+        });
+    </script>
+</body>
+</html> 

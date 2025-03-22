@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Short URL Dashboard</title>
+    <style>
+head{
+    background-color:linear-gradient(to right, #3e055b, #552997) ;
+}
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+            background-color: linear-gradient(to right, #3e055b, #552997);
+
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 10px 10px 4px rgba(68, 1, 68, 0.5);
+            animation: fadeIn 1s ease-in-out;
+            border: 5px solid black;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            border: 2px solid black;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid black;
+            text-align: left;
+        }
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+            transition: 0.3s;
+        }
+        canvas {
+            max-width: 100%;
+            margin-top: 20px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Short URL Dashboard</h1>
+        <label for="search">Search URL:</label>
+        <input type="text" id="search" onkeyup="searchTable()" placeholder="Search for URLs...">
+        <table>
+            <thead>
+                <tr>
+                    <th>Short URL</th>
+                    <th>Original URL</th>
+                    <th>Clicks</th>
+                </tr>
+            </thead>
+            <tbody id="urlTable">
+                <!-- Data will be inserted here dynamically -->
+            </tbody>
+        </table>
+        <h2>Click Distribution</h2>
+        <canvas id="clickChart"></canvas>
+        <h2>Top 10 URL Clicks</h2>
+        <canvas id="donutChart"></canvas>
+    </div>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const urlData = Array.from({ length: 100 }, (_, i) => ({
+            short: `https://short.ly/url${i + 1}`,
+            original: `https://example${i + 1}.com`,
+            clicks: Math.floor(Math.random() * 500)
+        }));
+
+        function populateTable() {
+            const tableBody = document.getElementById('urlTable');
+            tableBody.innerHTML = '';
+            urlData.forEach(url => {
+                const row = `<tr>
+                    <td><a href="${url.short}" target="_blank">${url.short}</a></td>
+                    <td>${url.original}</td>
+                    <td>${url.clicks}</td>
+                </tr>`;
+                tableBody.innerHTML += row;
+            });
+        }
+
+        function renderChart() {
+            const ctx = document.getElementById('clickChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: urlData.slice(0, 20).map(url => url.short),
+                    datasets: [{
+                        label: 'Clicks',
+                        data: urlData.slice(0, 20).map(url => url.clicks),
+                        backgroundColor: 'blue'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        x: { ticks: { display: false } } 
+                    }
+                }
+            });
+        }
+
+        function renderDonutChart() {
+            const ctx = document.getElementById('donutChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: urlData.slice(0, 10).map(url => url.short),
+                    datasets: [{
+                        label: 'Clicks',
+                        data: urlData.slice(0, 10).map(url => url.clicks),
+                        backgroundColor: ['red', 'blue', 'green', 'purple', 'orange', 'yellow', 'pink', 'brown', 'cyan', 'magenta']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { position: 'bottom' }
+                    }
+                }
+            });
+        }
+
+        function searchTable() {
+            let input = document.getElementById("search").value.toLowerCase();
+            let rows = document.querySelectorAll("#urlTable tr");
+            rows.forEach(row => {
+                let text = row.innerText.toLowerCase();
+                row.style.display = text.includes(input) ? "" : "none";
+            });
+        }
+
+        populateTable();
+        renderChart();
+        renderDonutChart();
+    </script>
+</body>
+</html>

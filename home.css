@@ -1,0 +1,459 @@
+/* body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label, input, button {
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+
+ body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+h1, h2 {
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label, input, button {
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+} 
+
+ th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+section {
+    margin-top: 20px;
+}
+
+h1, h2 {
+    margin-bottom: 20px;
+}
+
+form, table {
+    width: 100%;
+}
+
+label, input, select, button {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 8px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}  */
+
+/* importing goole fonts  */
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&family=Dancing+Script&family=Dekko&family=Kablammo&family=Kalnia+Glaze:wght@100..700&family=Miniver&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+IT+Moderna:wght@300&family=Poppins:ital,wght@0,400;0,600;0,700;1,300;1,400;1,500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins" , sans-serif;
+
+}
+
+:root{
+     /* colors*/
+     --white-color:#fff;
+     --dark-color:#252525;
+     --primary-color:#3d1b22;
+     --secondary-color:#f39613;
+     --light-pink-color:#faf4f5;
+     --medium-gray-color:#ccc;
+ 
+     /* font-size */
+     --font-size-s:0.9rem;
+     --font-size-n:1rem;
+     --font-size-m:1.12rem;
+     --font-size-l:1.5rem;
+     --font-size-xl:2rem;
+     --font-size-xxl:2.3rem;
+ 
+     /* font-weight */
+     --font-weight-normal:400;
+     --font-weight-medium:500;
+     --font-weight-semibold:600;
+     --font-weight--bold:700;
+ 
+    /* border-radius */
+    --border-radius-s:8px;
+    --border-radius-m:30px;
+    --border-radius-circle:50%
+ 
+    /* site max width */
+    --site-max-width:1500px;
+
+}
+
+
+header{
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+    background-color: rgb(127, 255, 244,0.4);
+    box-shadow: 5px 7px 8px;
+    
+    
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+button{
+    cursor: pointer;
+    border:none;
+    background: none;
+
+
+}
+
+.logo-text{
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+img{
+    width: 100%;
+}
+
+.section-content{
+    margin: 0 auto;
+    padding: 0 40px;
+    max-width: var(--site-max-width);
+}
+
+
+.section-title{
+    text-align: center;
+    padding : 120px 0 100px;
+    text-transform: uppercase;
+    font-size: var(--font-size-xl);
+
+}
+
+.section-title::after{
+    content: "";
+    width: 200px;
+    height: 5px;
+    display: block;
+    margin: 10px auto;
+    border-radius: var(--border-radius-s);
+    background-color: var(--secondary-color);
+}
+
+header .navbar{
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .nav-menu{
+    display: flex;
+    gap : 10px;
+
+   
+}
+
+.navbar .nav-logo .logo-text{
+    color: var(--white-color);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight--semibold);
+}
+
+.navbar .nav-menu .nav-links{
+    padding: 10px 18px;
+    color: var(--white-color);
+    font-size: var(--font-size-m);
+    /* background-color: var(--secondary-color); */
+    border-radius: var(--border-radius-m);
+    transition: 1.0s ease;
+}
+
+
+.navbar .nav-menu .nav-links:hover{
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    box-shadow: 2px 3px 3px var(--white-color);
+
+}
+
+.hero-section{
+    min-height: 100vh;
+   background-image: url("projectimage.jpg");
+}
+
+.hero-section .section-content{
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    color: var(--white-color);
+    justify-content: space-between;
+}
+
+.hero-section .hero-details .title{
+    font-size: var(--font-size-xxl);
+    color: white;
+    font-family: "Miniver",sans-serif;
+    
+
+}
+
+.hero-section .hero-details .sub-title{
+    margin-top: 8px;
+    width: 70%;
+    color:rgb(198, 123, 19);
+    
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight--bold);
+
+
+    
+}
+
+.hero-section .hero-details .description{
+    max-width: 70%;
+    margin: 24px 0 24px;
+    color: #f39613;
+    font-weight: var(--font-weight--bold);
+    font-size: var(--font-size-l);
+}
+
+.hero-section .hero-details .buttons{
+    display: flex;
+    gap: 20px;
+}
+
+.hero-section .hero-details .button{
+    padding: 10px 26px;
+    border: 2px solid transparent;
+    color: var(--primary-color);
+    border-radius: var(--border-radius-m);
+    background: var(--secondary-color);
+    font-weight: var(--font-weight--medium);
+    transition: 0.4s ease;
+
+
+}
+
+.hero-section .hero-details .button:hover{
+    color: var(--white-color);
+    border-color : var(--white-color);
+    background: transparent;
+
+}
+
+.hero-section .hero-details .contact-us:hover{
+    color: var(--white-color);
+    border-color : var(--white-color);
+    background: transparent;
+
+}
+
+/* .logo-text {
+    position: relative;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .logo-text:hover {
+    transform: translateX(50px); /* Moves text 50px to the right */
+  
+  
+  /* @keyframes moveText {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(50px); }
+   
+  }
+  
+  .logo-text {
+    display: inline-block;
+    animation: moveText 2s infinite;
+  }
+
+  .title {
+    position: relative;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .logo-text:hover {
+    transform: translateX(50px); /* Moves text 50px to the right */
+  
+ /* @keyframes moveTitle {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(50px); }
+   
+  }
+  
+  .title {
+    display: inline-block;
+    animation: moveTitle 2s infinite;
+  }
+  .sub-title {
+    position: relative;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .sub-title:hover {
+    transform: translateX(50px); /* Moves text 50px to the right */
+  
+  
+ /* @keyframes movesubtitle {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(50px); }
+   
+  }
+  
+  .sub-title {
+    display: inline-block;
+    animation: subtitle 2s infinite;
+  }
+  .description {
+    position: relative;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .description:hover {
+    transform: translateX(50px); /* Moves text 50px to the right */
+  
+  
+ /* @keyframes movedescription {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(50px); }
+   
+  }
+  
+  .description {
+    display: inline-block;
+    animation: movedescription 2s infinite;
+  }
+  
+
+  */
